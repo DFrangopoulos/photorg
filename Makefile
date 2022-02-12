@@ -12,7 +12,7 @@ CFLAGS := -c -Wall -Ofast -std=gnu99
 LFLAGS := -Wall -fuse-ld=gold -std=gnu99 -static
 
 $(OBJ_DIR)/photorg: $(OBJ_FILES)
-	$(CC) $(LFLAGS) -o $@ $^
+	$(CC) $(LFLAGS) -o $@ $^ && ln -s $@ photorg
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -I$(INC_DIR) -o $@ $<
@@ -22,3 +22,4 @@ docs: $(OBJ_DIR)/photorg
 
 clean:
 	rm $(OBJ_DIR)/*
+	rm photorg
