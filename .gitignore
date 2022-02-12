@@ -1,3 +1,4 @@
 obj/*
 run
 doc.html
+!obj/.blank
