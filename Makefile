@@ -18,8 +18,8 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -I$(INC_DIR) -o $@ $<
 
 docs: $(OBJ_DIR)/photorg
-	doxygen Doxyfile
+	doxygen Doxyfile && ln -s doc/html/index.html doc.html
 
 clean:
 	rm $(OBJ_DIR)/*
-	rm photorg
+	rm photorg doc.html
